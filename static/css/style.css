@@ -23,5 +23,9 @@ and open the template in the editor.
     padding-bottom: 8px;
 }
 
-
-
+img.bottom-image {
+    float: right;
+    position: relative;
+    bottom: 50px;
+    
+}
