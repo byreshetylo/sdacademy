@@ -14,6 +14,9 @@
     <!-- Bootstrap theme -->
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="../static/images/fav.ico" />
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -27,12 +30,12 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"><span class='glyphicon glyphicon-globe'></span>My.Academy</a>
+            <a class="navbar-brand" href="index.html"><span class='glyphicon glyphicon-globe'>&nbsp;My.Academy</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Main</a></li>
-            <li><a href="contact.html">Contacts</a></li>
+            <li class="active"><a href="index.html" title="Go to main page">Main</a></li>
+            <li><a href="contact.html" title="Go to contacts page">Contacts</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -41,7 +44,7 @@
     <div class="container theme-showcase" role="main">
 
       <div class="jumbotron">
-        <h2>My.Academy course description</h2>
+        <h2>My.Academy course Description</h2>
         <p>Welcome to our awesome courses. There you can find the latest information about the WEB-development.
             Just take a look and choose the best chapter for learning.</p>
       </div>
@@ -53,39 +56,31 @@
             <li class="course-title">HTML, CSS and JavaScript <span class="label label-primary">$199.00</span>
                 <span class="course-description">In this module you will be introduced to the fundamental elements of HTML and CSS, the main technologies used to construct web pages.</span>
             </li>
-            <ul>
-                <li>HTML & CSS</li>
-                <li>Introduction to JavaScript</li>
-                <li>Advanced JavaScript</li>
-            </ul>
+                <li class="course-child">HTML & CSS</li>
+                <li class="course-child">Introduction to JavaScript</li>
+                <li class="course-child">Advanced JavaScript</li>
             <li class="course-title">Front-End Web UI Frameworks and Tools <span class="label label-primary">$499.00</span>
                 <span class="course-description">This course will give you an overview of client-side web frameworks, in particular Bootstrap. You will learn about grids and responsive design, Bootstrap CSS and JavaScript components. You will learn about CSS preprocessors, Less and Sass. You will also learn the basics of Node.js and NPM and learn about Web tools like Bower.</span>
             </li>
-            <ul>
-                <li>Front-end Web UI Frameworks Overview: Bootstrap</li>
-                <li>Bootstrap CSS Components</li>
-                <li>Bootstrap Javascript Components</li>
-                <li>Web Tools</li>
-            </ul>
+                <li class="course-child">Front-end Web UI Frameworks Overview: Bootstrap</li>
+                <li class="course-child">Bootstrap CSS Components</li>
+                <li class="course-child">Bootstrap Javascript Components</li>
+                <li class="course-child">Web Tools</li>
             <li class="course-title">Front-End JavaScript Frameworks: AngularJS <span class="label label-primary">$899.00</span>
                 <span class="course-description">This course concentrates mainly on Javascript based front-end frameworks, and in particular, AngularJS, the most popular among them. We will review the model view controller (MVC) design-pattern in the context of AngularJS. You will be introduced to various aspects of AngularJS including two-way data binding and angular directives and filters. You will then be introduced to angular controllers and scopes. UI routing and templates will then be reviewed. Finally we will look at angular modules and services. Single page application (SPA) development using Angular will also be explored. You must have either completed the previous course in the specialization on Bootstrap, or have a working knowledge of Bootstrap to be able to navigate this course.</span>
             </li>
-            <ul>
-                <li>Front-End Javascript Frameworks: AngularJS Overview</li>
-                <li>Task Runners, Angular Scope, Forms and Form Validation</li>
-                <li>Single Page Applications</li>
-                <li>Client-Server Communication and Angular Testing</li>
-            </ul>
+                <li class="course-child">Front-End Javascript Frameworks: AngularJS Overview</li>
+                <li class="course-child">Task Runners, Angular Scope, Forms and Form Validation</li>
+                <li class="course-child">Single Page Applications</li>
+                <li class="course-child">Client-Server Communication and Angular Testing</li>
             <li class="course-title">Multiplatform Mobile App Development with Web Technologies <span class="label label-primary">$1499.00</span>
                 <span class="course-description">This course focuses on developing multiplatform mobile applications using the Web skills (HTML5, CSS and Javascript) that you have already acquired so far in the previous courses of this specialization. In particular we make use of the Cordova hybrid application framework to develop and target multiple mobile platforms with a single codebase. We make use of the Ionic framework, one of fastest growing mobile application frameworks, that is built with mobile-optimized HTML5 and CSS based components and AngularJS.</span>
             </li>
-            <ul>
-                <li>Hybrid Mobile App Development Frameworks: An Introduction</li>
-                <li>More Ionic CSS and JavaScript</li>
-                <li>Deploying your App</li>
-                <li>Accessing Native Capabilities of Devices: Cordova and ngCordova</li>
-                <li>Formatting HTML Text</li>
-            </ul>
+                <li class="course-child">Hybrid Mobile App Development Frameworks: An Introduction</li>
+                <li class="course-child">More Ionic CSS and JavaScript</li>
+                <li class="course-child">Deploying your App</li>
+                <li class="course-child">Accessing Native Capabilities of Devices: Cordova and ngCordova</li>
+                <li class="course-child">Formatting HTML Text</li>
             <li class="course-title">Server-side Development with NodeJS <span class="label label-primary">$1999.00</span>
                 <span class="course-description">This course deals with all things server-side. We base the entire course around the NodeJS platform. We start with a brief overview of the Web protocols: HTTP and HTTPS. We examine NodeJS and NodeJS modules: Express for building web servers. On the database side, we review basic CRUD operations, NoSQL databases, in particular MongoDB and Mongoose for accessing MongoDB from NodeJS.</span>
             </li>
@@ -104,7 +99,7 @@
       
         <div class="well">
             <p>Copyright &copy; 2016 My.Academy. All rights not reserved. <a href="#copy" onclick="$('#beers').toggle();" id="copy">Copy anything you want.</a></p>
-            <img src="../static/images/oscar-lage.png" border="0" style="display: none;" id="beers" class="bottom-image" />
+            <img src="../static/images/oscar-lage.png" style="display: none;" alt='OSCAR beers' id="beers" class="bottom-image" onclick="$('#beers').toggle();" />
         </div>
 
     </div> <!-- /container -->

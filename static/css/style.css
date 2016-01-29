@@ -17,15 +17,53 @@ and open the template in the editor.
     padding-top: 18px;
 }
 
+.course-child {
+    margin-left: 15px;
+    list-style-type: circle;
+}
+
 .course-description {
     display: block;
     font-size: small;
     padding-bottom: 8px;
 }
 
-img.bottom-image {
-    float: right;
-    position: relative;
-    bottom: 50px;
-    
+.bottom-image {
+    position: fixed;
+    bottom: 5%;
+    right: 20%;
+}
+
+img { border: 0; }
+
+/*  contacts  */
+
+.our-gods {
+    padding-top: 150px;
+    width: 100%;
+    display: inline-block;
+}
+
+.god-item {
+    width: 30%;
+    padding: 10px;
+    float: left;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.god-item span {
+    font-weight: 700;
+}
+
+.our-gods img {
+    height: 250px;
+    width: 250px;
+    overflow:hidden;
+}
+
+.god-image {
+    max-width: 250px;
+    max-height: 250px;
 }
