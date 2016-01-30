@@ -67,3 +67,19 @@ img { border: 0; }
     max-width: 250px;
     max-height: 250px;
 }
+
+/* students page */
+
+.padding-page {
+    padding-top: 60px;
+}
+
+.table tbody>tr>td.vert-align
+{
+    vertical-align: middle;
+    align-content: center;
+}
+
+.bold-first-row tr>td:first-child {
+    font-weight: 800;
+}
