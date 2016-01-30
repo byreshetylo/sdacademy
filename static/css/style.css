@@ -34,6 +34,13 @@ and open the template in the editor.
     right: 20%;
 }
 
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding-top:20px;
+} 
+
 img { border: 0; }
 
 /*  contacts  */
@@ -70,6 +77,11 @@ img { border: 0; }
 
 /* students page */
 
+.user-profile-pic {
+    width: 90%;
+    padding-left: 5%;
+}
+
 .padding-page {
     padding-top: 60px;
 }
@@ -80,6 +92,10 @@ img { border: 0; }
     align-content: center;
 }
 
-.bold-first-row tr>td:first-child {
+.bold-first-row thead {
+    font-weight: 800;
+}
+
+.bold-first-col tr>td:first-child {
     font-weight: 800;
 }
