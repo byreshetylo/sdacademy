@@ -63,40 +63,11 @@
           <h2>Courses Program</h2>
       </div>
         <ul>
-            <li class="course-title">HTML, CSS and JavaScript <span class="label label-primary">$199.00</span>
-                <span class="course-description">In this module you will be introduced to the fundamental elements of HTML and CSS, the main technologies used to construct web pages.</span>
+            {% for course in courses %}
+            <li class="course-title"><a href="/courses/{{ course.id }}/">{{ course.name }}</a><span class="label label-primary">${{ course.id }}99.99</span>
+                <span class="course-description">{{ course.short_description }}</span>
             </li>
-                <li class="course-child">HTML &amp; CSS</li>
-                <li class="course-child">Introduction to JavaScript</li>
-                <li class="course-child">Advanced JavaScript</li>
-            <li class="course-title">Front-End Web UI Frameworks and Tools <span class="label label-primary">$499.00</span>
-                <span class="course-description">This course will give you an overview of client-side web frameworks, in particular Bootstrap. You will learn about grids and responsive design, Bootstrap CSS and JavaScript components. You will learn about CSS preprocessors, Less and Sass. You will also learn the basics of Node.js and NPM and learn about Web tools like Bower.</span>
-            </li>
-                <li class="course-child">Front-end Web UI Frameworks Overview: Bootstrap</li>
-                <li class="course-child">Bootstrap CSS Components</li>
-                <li class="course-child">Bootstrap Javascript Components</li>
-                <li class="course-child">Web Tools</li>
-            <li class="course-title">Front-End JavaScript Frameworks: AngularJS <span class="label label-primary">$899.00</span>
-                <span class="course-description">This course concentrates mainly on Javascript based front-end frameworks, and in particular, AngularJS, the most popular among them. We will review the model view controller (MVC) design-pattern in the context of AngularJS. You will be introduced to various aspects of AngularJS including two-way data binding and angular directives and filters. You will then be introduced to angular controllers and scopes. UI routing and templates will then be reviewed. Finally we will look at angular modules and services. Single page application (SPA) development using Angular will also be explored. You must have either completed the previous course in the specialization on Bootstrap, or have a working knowledge of Bootstrap to be able to navigate this course.</span>
-            </li>
-                <li class="course-child">Front-End Javascript Frameworks: AngularJS Overview</li>
-                <li class="course-child">Task Runners, Angular Scope, Forms and Form Validation</li>
-                <li class="course-child">Single Page Applications</li>
-                <li class="course-child">Client-Server Communication and Angular Testing</li>
-            <li class="course-title">Multiplatform Mobile App Development with Web Technologies <span class="label label-primary">$1499.00</span>
-                <span class="course-description">This course focuses on developing multiplatform mobile applications using the Web skills (HTML5, CSS and Javascript) that you have already acquired so far in the previous courses of this specialization. In particular we make use of the Cordova hybrid application framework to develop and target multiple mobile platforms with a single codebase. We make use of the Ionic framework, one of fastest growing mobile application frameworks, that is built with mobile-optimized HTML5 and CSS based components and AngularJS.</span>
-            </li>
-                <li class="course-child">Hybrid Mobile App Development Frameworks: An Introduction</li>
-                <li class="course-child">More Ionic CSS and JavaScript</li>
-                <li class="course-child">Deploying your App</li>
-                <li class="course-child">Accessing Native Capabilities of Devices: Cordova and ngCordova</li>
-                <li class="course-child">Formatting HTML Text</li>
-            <li class="course-title">Server-side Development with NodeJS <span class="label label-primary">$1999.00</span>
-                <span class="course-description">This course deals with all things server-side. We base the entire course around the NodeJS platform. We start with a brief overview of the Web protocols: HTTP and HTTPS. We examine NodeJS and NodeJS modules: Express for building web servers. On the database side, we review basic CRUD operations, NoSQL databases, in particular MongoDB and Mongoose for accessing MongoDB from NodeJS.</span>
-            </li>
-            <li class="course-title">Full Stack Web Development Specialization Capstone Project <span class="label label-primary">$2499.00</span>
-                <span class="course-description">The Capstone project is the culmination of your journey through the Full Stack Web Development specialization. The Capstone project is aimed at building a fully functional front-end Application (both Web App designed using Bootstrap+AngularJS, and hybrid mobile app implemented using the Ionic framework) and full server-side implementation using Node.js+Express+MongoDB (possibly using a higher level framework). The project provides you an opportunity to demonstrate the skills that you have acquired from the courses within the specialization.</span>
-            </li>
+            {% endfor %}
         </ul>
 
       <div class="page-header">
