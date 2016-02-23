@@ -3,9 +3,12 @@ from models import Student
 
 
 def detail(request, pk):
-    context = {
-        'student_info': Student.objects.filter(pk=pk)[0],
-    }
+    context = {}
+    student_info = Student.objects.filter(pk=pk)
+    if len(student_info) > 0:
+        context = {
+            'student_info': student_info[0],
+        }
     return render(request, 'students/detail.html', context)
 
 
