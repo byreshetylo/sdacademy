@@ -10,7 +10,11 @@ def detail(request, pk):
 
 
 def list_view(request):
-    students = Student.objects.all()
+    by_id = request.GET.get('course_id')
+    if by_id:
+        students = Student.objects.filter(courses=by_id)
+    else:
+        students = Student.objects.all()
     context = {
         'students': students,
     }
