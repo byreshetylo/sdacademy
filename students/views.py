@@ -2,6 +2,16 @@ from django.shortcuts import render
 from models import Student
 
 
-def index(request):
-    return render(request, '')
+def detail(request, pk):
+    context = {
+        'student_info': Student.objects.filter(pk=pk)[0],
+    }
+    return render(request, 'students/detail.html', context)
 
+
+def list_view(request):
+    students = Student.objects.all()
+    context = {
+        'students': students,
+    }
+    return render(request, 'students/list.html', context)
