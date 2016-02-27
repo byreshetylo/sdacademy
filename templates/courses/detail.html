@@ -59,6 +59,16 @@
       </div>
 
       <div class="page-header">
+            <h2>Our coaches on this course:</h2>
+      </div>
+
+        {{ course_info.coach.first_name }} {{ course_info.coach.last_name }}
+        {{ course_info.coach.description }}
+
+        {{ course_info.assistant.first_name }} {{ course_info.assistant.last_name }}
+        {{ course_info.assistant.description }}
+
+      <div class="page-header">
           <h2>{{ course_info }} program:</h2>
       </div>
         <table class="table table-bordered bold-first-col">

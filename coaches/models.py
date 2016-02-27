@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Coach(models.Model):
+class Coach(User):
     user = models.OneToOneField(User)
     date_of_birth = models.DateField()
     gender = models.CharField(max_length=1, choices=(('M', 'Male'), ('F', 'Female')))
@@ -12,4 +12,4 @@ class Coach(models.Model):
     description = models.TextField()
 
     def __unicode__(self):
-        return self.user.name
+        return self.user.username
