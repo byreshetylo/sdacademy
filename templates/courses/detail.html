@@ -59,14 +59,31 @@
       </div>
 
       <div class="page-header">
-            <h2>Our coaches on this course:</h2>
+            <h2>Mentors on this course:</h2>
       </div>
 
-        {{ course_info.coach.first_name }} {{ course_info.coach.last_name }}
-        {{ course_info.coach.description }}
-
-        {{ course_info.assistant.first_name }} {{ course_info.assistant.last_name }}
-        {{ course_info.assistant.description }}
+    {% if course_info.coach %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Coach</h3>
+          </div>
+          <div class="panel-body">
+            <a href="{% url 'coaches:detail' course_info.coach.id %}">{{ course_info.coach.first_name }} {{ course_info.coach.last_name }}</a><br/>
+            <p>{{ course_info.coach.description }}</p>
+          </div>
+        </div>
+    {% endif %}
+    {% if course_info.assistant %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Assistant</h3>
+          </div>
+          <div class="panel-body">
+            <a href="{% url 'coaches:detail' course_info.assistant.id %}">{{ course_info.assistant.first_name }} {{ course_info.assistant.last_name }}</a><br/>
+            <p>{{ course_info.assistant.description }}</p>
+          </div>
+        </div>
+    {% endif %}
 
       <div class="page-header">
           <h2>{{ course_info }} program:</h2>
