@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
+from forms import QuadraticForm
 from math import sqrt, fabs
 
 
 def quadratic_results(request):
+    form = QuadraticForm(request.GET)
     a_data = check_value(request.GET.get('a', ''), True)
     b_data = check_value(request.GET.get('b', ''))
     c_data = check_value(request.GET.get('c', ''))
@@ -21,6 +23,7 @@ def quadratic_results(request):
         'a_error': a_data['error'],
         'b_error': b_data['error'],
         'c_error': c_data['error'],
+        'form': form,
     }
     return render(request, 'results.html', context)
 
