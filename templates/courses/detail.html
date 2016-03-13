@@ -34,6 +34,7 @@
         </div>
     {% endif %}
 
+    {% include 'include/messages_include.html' %}
     <a href="{% url 'courses:add_lesson' course_info.id %}" role="button" class="btn btn-primary">Add new lesson</a>
 
       <div class="page-header">
