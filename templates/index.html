@@ -11,10 +11,14 @@
       <div class="page-header">
           <h2>Courses Program</h2>
       </div>
+      {% include 'include/messages_include.html' %}
+      <a href="{% url 'courses:add' %}" role="button" class="btn btn-primary">Add new course</a>
         <ul>
             {% for course in courses %}
             <li class="course-title"><a href="/courses/{{ course.id }}/">{{ course.name|upper }}</a><span class="label label-primary">${{ course.id }}99.99</span>
                 <span class="course-description">{{ course.short_description|title }}</span>
+                <a href="{% url 'courses:edit' course.id %}" role="button" class="btn btn-primary">Edit</a>
+                <a href="{% url 'courses:remove' course.id %}" role="button" class="btn btn-primary">Remove</a>
             </li>
             {% endfor %}
         </ul>

@@ -5,7 +5,7 @@
 {% block content %}
       <div class="container-fluid">
         <div class="row">
-            <h3>Student {{ student.name }} {{ student.surname }} will be deleted</h3>
+            <h3>Course {{ course.name }} will be deleted</h3>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}

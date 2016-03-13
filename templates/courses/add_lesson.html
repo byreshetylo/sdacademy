@@ -5,11 +5,11 @@
 {% block content %}
       <div class="container-fluid">
         <div class="row">
-            <h3>Add new student</h3>
+            <h3>Add new lesson for course</h3>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-            <input type="submit" value="Add new" class="btn btn-primary">
+            <input type="submit" value="Add new lesson" class="btn btn-primary">
             </form>
          </div>
       </div>
