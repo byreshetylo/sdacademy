@@ -15,7 +15,7 @@ def quadratic_results(request):
         'd_details': d_data['d_desc'],
         'form': form,
     }
-    return render(request, 'results.html', context)
+    return render(request, 'quadratic/results.html', context)
 
 # LoGiC goes here \|/
 
