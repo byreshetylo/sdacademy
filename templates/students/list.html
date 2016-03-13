@@ -8,9 +8,10 @@
       </div>
         <p>Here is the list of our best students so far. Please check them out.</p>
 
+      {% include 'include/messages_include.html' %}
+      <a href="{% url 'students:add' %}" role="button" class="btn btn-primary">Add new one</a>
+
       <div class="clearfix"><hr/></div>
-
-
       <table class="table table-bordered">
           <thead>
               <tr>
@@ -19,6 +20,7 @@
                   <th>Address</th>
                   <th>Skype</th>
                   <th>Courses</th>
+                  <th colspan="2"></th>
               </tr>
           </thead>
           <tbody>
@@ -32,6 +34,12 @@
                     {% for course in student.courses.all %}
                         <a href="{% url 'courses:detail' course.id %}">{{ course.name }}</a>&nbsp;
                     {% endfor %}
+                </td>
+                <td>
+                   <a href="{% url 'students:edit' student.id %}" role="button" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                   <a href="{% url 'students:remove' student.id %}" role="button" class="btn btn-primary">Remove</a>
                 </td>
             </tr>
             {% endfor %}
