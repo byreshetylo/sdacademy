@@ -6,15 +6,21 @@ from math import sqrt, fabs
 
 
 def quadratic_results(request):
-    form = QuadraticForm(request.GET)
-    d_data = {'d': '', 'd_desc': ''}
-    if form.is_valid():
-        d_data = d_calculate(form.cleaned_data['a'], form.cleaned_data['b'], form.cleaned_data['c'])
-    context = {
-        'd_value': d_data['d'],
-        'd_details': d_data['d_desc'],
-        'form': form,
-    }
+    if request.method == 'GET':
+        form = QuadraticForm(request.GET)
+        d_data = {'d': '', 'd_desc': ''}
+        if form.is_valid():
+            d_data = d_calculate(form.cleaned_data['a'], form.cleaned_data['b'], form.cleaned_data['c'])
+        context = {
+            'd_value': d_data['d'],
+            'd_details': d_data['d_desc'],
+            'form': form,
+        }
+    else:
+        form = QuadraticForm()
+        context = {
+            'form': form
+        }
     return render(request, 'quadratic/results.html', context)
 
 # LoGiC goes here \|/
