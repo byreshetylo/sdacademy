@@ -1,14 +1,15 @@
 from django.core.urlresolvers import reverse_lazy
 from django.contrib import messages
-from models import Student
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from models import Student
+from sdacademy.utils import MyCustomTitleMixin
 
 
 class StudentListView(ListView):
     model = Student
-    # paginate_by = 2
+    paginate_by = 2
 
     def get_queryset(self):
         by_id = self.request.GET.get('course_id')
@@ -23,16 +24,7 @@ class StudentDetailView(DetailView):
     model = Student
 
 
-class StudentTitleMixin(object):
-    custom_title = 'Default Student Title'
-
-    def get_context_data(self, **kwargs):
-        context = super(StudentTitleMixin, self).get_context_data(**kwargs)
-        context['title'] = self.custom_title
-        return context
-
-
-class StudentCreateView(StudentTitleMixin, CreateView):
+class StudentCreateView(MyCustomTitleMixin, CreateView):
     model = Student
     success_url = reverse_lazy('students:list_view')
     custom_title = 'Student registration'
@@ -46,7 +38,7 @@ class StudentCreateView(StudentTitleMixin, CreateView):
         return super(StudentCreateView, self).form_valid(form)
 
 
-class StudentUpdateView(StudentTitleMixin, UpdateView):
+class StudentUpdateView(MyCustomTitleMixin, UpdateView):
     model = Student
     success_url = reverse_lazy('students:edit')
     custom_title = 'Student info update'
@@ -57,7 +49,7 @@ class StudentUpdateView(StudentTitleMixin, UpdateView):
         return self.render_to_response(self.get_context_data(form=form))
 
 
-class StudentDeleteView(StudentTitleMixin, DeleteView):
+class StudentDeleteView(MyCustomTitleMixin, DeleteView):
     model = Student
     success_url = reverse_lazy('students:list_view')
     custom_title = 'Student info suppression'
