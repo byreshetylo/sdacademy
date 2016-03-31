@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'courses',
     'students',
     'coaches',
+    'feedbacks',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -101,3 +102,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
+ADMINS = (('Yuriy Reshetylo', 'yuriy.reshetylo@gmail.com'),)
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+DEFAULT_FROM_EMAIL = 'siterobot@sdacademy.ua1'
+SERVER_EMAIL = 'admin-notify@sdacademy.ua1'
