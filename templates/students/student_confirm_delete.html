@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block title %}Student list{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block content %}
       <div class="container-fluid">
         <div class="row">
-            <h3>Edit student data</h3>
-            {% include 'include/messages_include.html' %}
+            <h3>Student {{ student.name }} {{ student.surname }} will be deleted</h3>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-            <input type="submit" value="Edit" class="btn btn-primary">
+            <input type="submit" value="Delete" class="btn btn-primary">
             </form>
          </div>
       </div>

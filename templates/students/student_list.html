@@ -24,7 +24,8 @@
               </tr>
           </thead>
           <tbody>
-            {% for student in students %}
+          {{ object }}
+            {% for student in object_list %}
             <tr>
                 <td>{{ student.id }}</td>
                 <td><a href="{% url 'students:detail' student.id %}">{{ student.surname }} {{ student.name }}</a></td>
