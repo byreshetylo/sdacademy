@@ -15,8 +15,7 @@
           <ul class="nav navbar-nav">
             <li{% if request.get_full_path == index_url %} class="active"{% endif %}><a href="{% url 'index' %}" title="Go to main page">Main</a></li>
             <li{% if request.get_full_path == contact_url %} class="active"{% endif %}><a href="{% url 'contact' %}" title="Go to contacts page">Contacts</a></li>
-                <li{% if request.get_full_path == student_list_view_url %} class="active"{% endif %}><a href="{% url 'students:list_view' %}?course_id={{ course_info.id }}" title="Go to students page">Students</a></li>
-              {{ request.get_full_path }}
+                <li{% if request.get_full_path == student_list_view_url %} class="active"{% endif %}><a href="{% url 'students:list_view' %}?course_id={{ course.id }}" title="Go to students page">Students</a></li>
             {% if request.get_full_path == course_detail_url %}
                 <li{% if request.get_full_path == student_list_url %} class="active"{% endif %}><a href="{% url 'student_list' %}" title="Go to students page">Students</a></li>
             {% else %}

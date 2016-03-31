@@ -1,10 +1,5 @@
 from django.forms import ModelForm
-from models import Lesson, Course
-
-
-class CourseModelForm(ModelForm):
-    class Meta:
-        model = Course
+from models import Lesson
 
 
 class LessonModelForm(ModelForm):

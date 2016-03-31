@@ -3,42 +3,42 @@
 
 {% block content %}
       <div class="jumbotron">
-        <h2>{{ course_info }}</h2>
-        <p>{{ course_info.description|truncatechars:32 }}</p>
+        <h2>{{ course }}</h2>
+        <p>{{ course.description|truncatechars:32 }}</p>
       </div>
 
       <div class="page-header">
             <h2>Mentors on this course:</h2>
       </div>
 
-    {% if course_info.coach %}
+    {% if course.coach %}
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Coach</h3>
           </div>
           <div class="panel-body">
-            <a href="{% url 'coaches:detail' course_info.coach.id %}">{{ course_info.coach.first_name }} {{ course_info.coach.last_name }}</a><br/>
-            <p>{{ course_info.coach.description }}</p>
+            <a href="{% url 'coaches:detail' course.coach.id %}">{{ course.coach.first_name }} {{ course.coach.last_name }}</a><br/>
+            <p>{{ course.coach.description }}</p>
           </div>
         </div>
     {% endif %}
-    {% if course_info.assistant %}
+    {% if course.assistant %}
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Assistant</h3>
           </div>
           <div class="panel-body">
-            <a href="{% url 'coaches:detail' course_info.assistant.id %}">{{ course_info.assistant.first_name }} {{ course_info.assistant.last_name }}</a><br/>
-            <p>{{ course_info.assistant.description }}</p>
+            <a href="{% url 'coaches:detail' course.assistant.id %}">{{ course.assistant.first_name }} {{ course.assistant.last_name }}</a><br/>
+            <p>{{ course.assistant.description }}</p>
           </div>
         </div>
     {% endif %}
 
     {% include 'include/messages_include.html' %}
-    <a href="{% url 'courses:add_lesson' course_info.id %}" role="button" class="btn btn-primary">Add new lesson</a>
+    <a href="{% url 'courses:add_lesson' course.id %}" role="button" class="btn btn-primary">Add new lesson</a>
 
       <div class="page-header">
-          <h2>{{ course_info }} program:</h2>
+          <h2>{{ course }} program:</h2>
       </div>
         <table class="table table-bordered bold-first-col">
             <tbody><tr>
