@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Feedback form{% endblock %}
+
+{% block content %}
+      <div class="container-fluid">
+        <div class="row">
+            <h3>Please fill all fields to send feedback</h3>
+            {% include 'include/messages_include.html' %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <input type="submit" value="Send message" class="btn btn-primary">
+            </form>
+         </div>
+      </div>
+        
+      <hr/>
+{% endblock %}
