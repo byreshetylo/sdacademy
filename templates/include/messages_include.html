@@ -1,5 +1,7 @@
             {% if messages %}
                 {% for message in messages %}
-                <p{% if message.tags %} class="lead bg-{{ message.tags }}"{% endif %}>{{ message }}</p>
+                    <div{% if message.tags %} class="alert alert-{{ message.tags }} alert-text"{% endif %}>
+                      {{ message }}
+                    </div>
                 {% endfor %}
             {% endif %}

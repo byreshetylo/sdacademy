@@ -7,7 +7,7 @@
         <div class="row">
             <h3>Please fill all fields to send feedback</h3>
             {% include 'include/messages_include.html' %}
-            <form method="post">
+            <form method="post" class="col-md-6">
                 {% csrf_token %}
                 {{ form.as_p }}
             <input type="submit" value="Send message" class="btn btn-primary">

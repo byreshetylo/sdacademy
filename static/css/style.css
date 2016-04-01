@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : yuriyr
 */
 
+.jumbotron {
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
 .navbar-brand {
     font-size: x-large;
 }
@@ -46,7 +51,7 @@ img { border: 0; }
 /*  contacts  */
 
 .our-gods {
-    padding-top: 150px;
+    padding-top: 70px;
     width: 100%;
     display: inline-block;
 }
@@ -83,7 +88,7 @@ img { border: 0; }
 }
 
 .padding-page {
-    margin-top: 35px;
+    margin-top: 60px;
 }
 
 .table tbody>tr>td.vert-align
@@ -98,4 +103,26 @@ img { border: 0; }
 
 .bold-first-col tr>td:first-child {
     font-weight: 800;
+}
+
+.alert-text {
+    color: black;
+}
+
+form>p>label {
+    width: 18%;
+    text-align: right;
+    margin-right: 15px;
+}
+
+form>p>input {
+    width: 60%
+}
+
+form>input {
+    margin-left: 20%;
+}
+
+select {
+    color: black;
 }

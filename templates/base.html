@@ -38,6 +38,8 @@
 
     <div class="container padding-page" role="main">
     {% block content %}{% endblock %}
+    <!-- content end -->
+
         <div class="footer">
             <p>Copyright &copy; 2016 My.Academy. All rights not reserved. <a href="#copy" onclick="$('#beers').toggle();" id="copy">Copy anything you want.</a></p>
             <img src="{% static 'images/oscar-lage.png' %}" style="display: none;" alt='OSCAR beers' id="beers" class="bottom-image" onclick="$('#beers').toggle();" />
