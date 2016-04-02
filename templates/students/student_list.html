@@ -6,7 +6,7 @@
       <div class="page-header">
           <h2>My.Academy students</h2>
       </div>
-        <p>Here is the list of our best students so far. Please check them out.</p>
+      <p>Here is the list of our best students so far. Please check them out.</p>
 
       {% include 'include/messages_include.html' %}
       <a href="{% url 'students:add' %}" role="button" class="btn btn-primary">Add new one</a>
@@ -49,19 +49,19 @@
         <nav>
           <ul class="pagination">
             {% if page_obj.has_previous %}
-                <li><a href="?course_id={{ request.GET.course_id }}&page={{ page_obj.previous_page_number }}{{ getvars }}{{ hashtag }}" class="prev">&lsaquo;&lsaquo; previous</a></li>
+                <li><a href="?{% if request.GET.course_id %}course_id={{ request.GET.course_id }}&{% endif %}page={{ page_obj.previous_page_number }}{{ getvars }}{{ hashtag }}" class="prev">&lsaquo;&lsaquo; previous</a></li>
             {% endif %}
             {% for page in page_obj.paginator.page_range %}
                 {% if page %}
                     {% ifequal page page_obj.number %}
                         <li class="current page active"><a href="#">{{ page }}</a></li>
                     {% else %}
-                        <li><a href="?course_id={{ request.GET.course_id }}&page={{ page }}{{ getvars }}{{ hashtag }}" class="page">{{ page }}</a></li>
+                        <li><a href="?{% if request.GET.course_id %}course_id={{ request.GET.course_id }}&{% endif %}page={{ page }}{{ getvars }}{{ hashtag }}" class="page">{{ page }}</a></li>
                     {% endifequal %}
                 {% endif %}
             {% endfor %}
             {% if page_obj.has_next %}
-                <li><a href="?course_id={{ request.GET.course_id }}&page={{ page_obj.next_page_number }}{{ getvars }}{{ hashtag }}" class="next">next &rsaquo;&rsaquo;</a></li>
+                <li><a href="?{% if request.GET.course_id %}course_id={{ request.GET.course_id }}&{% endif %}page={{ page_obj.next_page_number }}{{ getvars }}{{ hashtag }}" class="next">next &rsaquo;&rsaquo;</a></li>
             {% endif %}
           </ul>
         </nav>
